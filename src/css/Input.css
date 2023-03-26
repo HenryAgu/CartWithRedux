@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+.input {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "DM Sans", sans-serif;
+  padding: 10px;
+  border-radius: 12px;
+}
+.input .input_text {
+  width: 90%;
+}
+.input .input_text input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  width: 100%;
+}
+.input .input_icon .add {
+  font-size: 20px;
+  font-weight: 700;
+  color: #E27573;
+  cursor: pointer;
+}
