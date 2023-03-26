@@ -1,0 +1,29 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #fff;
+}
+.item .item_name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.item .item_quantity {
+  color: #E27573;
+  background-color: #fff;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  padding: 2px 5px;
+  border-radius: 12px;
+}
+.item .item_quantity span {
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}

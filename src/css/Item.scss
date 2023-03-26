@@ -1,0 +1,36 @@
+// color variables
+$primary-color : #E27573;
+$secondary-color : #fff;
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $secondary-color;
+
+    .item_name{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .item_quantity{
+        color: $primary-color;
+        background-color: $secondary-color;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        padding: 2px 5px;
+        border-radius: 12px;
+
+        span{
+            position: relative;
+            top: 3px;
+            cursor: pointer;
+        }
+    }
+}
