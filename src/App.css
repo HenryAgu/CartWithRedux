@@ -16,3 +16,19 @@
     padding: 20px;
     width: 100%;
 }
+
+/* Responsiveness starts here */
+
+/* medium screens */
+@media (max-width: 991px) {
+    .app{
+        width: 65%;
+    }
+}
+
+/* Small Screens */
+@media only screen and (max-width: 480px) {
+    .app{
+        width: 90%;
+    }
+}
