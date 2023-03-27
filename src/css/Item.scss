@@ -1,8 +1,40 @@
+// DM Sans Google font link
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 // color variables
-$primary-color : #E27573;
-$secondary-color : #fff;
+$primary-color: #e27573;
+$secondary-color: #fff;
 
-.item{
+.top {
+  .input {
+    background-color: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "DM Sans", sans-serif;
+    padding: 10px;
+    border-radius: 12px;
+
+    .input_text {
+      width: 90%;
+      input {
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        width: 100%;
+      }
+    }
+    .input_icon {
+      .add {
+        font-size: 20px;
+        font-weight: 700;
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,27 +42,32 @@ $secondary-color : #fff;
     padding-bottom: 5px;
     border-bottom: 1px solid $secondary-color;
 
-    .item_name{
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    .item_name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .delete_icon {
+        cursor: pointer;
+      }
     }
 
-    .item_quantity{
-        color: $primary-color;
-        background-color: $secondary-color;
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 18px;
-        padding: 2px 5px;
-        border-radius: 12px;
+    .item_quantity {
+      color: $primary-color;
+      background-color: $secondary-color;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      padding: 2px 5px;
+      border-radius: 12px;
 
-        span{
-            position: relative;
-            top: 3px;
-            cursor: pointer;
-        }
+      span {
+        position: relative;
+        top: 3px;
+        cursor: pointer;
+      }
     }
+  }
 }
