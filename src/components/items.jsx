@@ -7,7 +7,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import { GrAdd } from "react-icons/gr";
 
 // redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem } from "../features/CartItems";
 
 // stylesheet
 import "../css/Item.css";
@@ -16,6 +17,12 @@ const items = () => {
   const [input, setInput] = useState("");
 
   const itemList = useSelector((state) => state.items.value);
+  const dispatch = useDispatch();
+
+  const itemDispatch = (input)=>{
+    dispatch(addItem({ id: 0, item: input, quantity: 1 }));
+    setInput("")
+  }
   return (
     <div className="top">
       <div className="input">
@@ -30,13 +37,18 @@ const items = () => {
           />
         </div>
         <div className="input_icon">
-          <GrAdd className="add" />
+          <GrAdd
+            className="add"
+            onClick={() => {
+              itemDispatch(input)
+            }}
+          />
         </div>
       </div>
       <div className="item_container">
         {itemList.map((item) => (
           <div className="item">
-            <div className="item_name">
+            <div className="item_name" key={item.id}>
               <RiDeleteBin5Line className="delete_icon" />
               <span>{item.item}</span>
             </div>
@@ -44,7 +56,7 @@ const items = () => {
               <span>
                 <IoIosArrowBack />
               </span>
-              <b>1</b>
+              <b>{item.quantity}</b>
               <span>
                 <IoIosArrowForward />
               </span>
