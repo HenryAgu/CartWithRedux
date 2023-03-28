@@ -8,7 +8,7 @@ import { GrAdd } from "react-icons/gr";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, deleteItem } from "../features/CartItems";
+import { addItem, deleteItem,increaseQuantity } from "../features/CartItems";
 
 // stylesheet
 import "../css/Item.css";
@@ -20,9 +20,13 @@ const items = () => {
   const dispatch = useDispatch();
 
   const itemDispatch = (input) => {
-    dispatch(
-      addItem({ id: itemList[itemList.length - 1].id + 1, item: input, quantity: 1 })
-    );
+    if(input.length < 1 || input.trim() === ""){
+      alert("Enter an item before clicking me")
+    }else{
+      dispatch(
+        addItem({ id: itemList[itemList.length - 1].id + 1, item: input, quantity: 1 })
+      );
+    }
     console.log({ id: itemList[itemList.length - 1].id + 1, item: input, quantity: 1 })
     setInput("");
   };
@@ -66,7 +70,8 @@ const items = () => {
               </span>
               <b>{item.quantity}</b>
               <span>
-                <IoIosArrowForward />
+                <IoIosArrowForward onClick={()=>{
+                }}/>
               </span>
             </div>
           </div>

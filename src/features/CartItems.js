@@ -17,9 +17,13 @@ export const itemSlice = createSlice({
         state.value = state.value.filter((item)=>
             item.id !== action.payload.id
         )
+    },
+    increaseQuantity: (state,action)=>{
+        // To increase Quantity of item
+        state.value = action.payload.id++
     }
   },
 });
 
-export const {addItem,deleteItem } = itemSlice.actions
+export const {addItem,deleteItem,increaseQuantity } = itemSlice.actions
 export default itemSlice.reducer;
