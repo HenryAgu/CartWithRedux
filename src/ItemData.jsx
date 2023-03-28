@@ -4,14 +4,9 @@ export const ItemDetail = [
     //     item: "Soap",
     //     quantity : 1,
     // },
-    // {
-    //     id: 2,
-    //     item: "Garri",
-    //     quantity : 1,
-    // },
-    // {
-    //     id: 3,
-    //     item: "Tooth Paste",
-    //     quantity : 1,
-    // },
+    {
+        id: 1,
+        item: "Garri",
+        quantity : 1,
+    },
 ]

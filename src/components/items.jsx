@@ -8,7 +8,7 @@ import { GrAdd } from "react-icons/gr";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { addItem } from "../features/CartItems";
+import { addItem, deleteItem } from "../features/CartItems";
 
 // stylesheet
 import "../css/Item.css";
@@ -19,10 +19,13 @@ const items = () => {
   const itemList = useSelector((state) => state.items.value);
   const dispatch = useDispatch();
 
-  const itemDispatch = (input)=>{
-    dispatch(addItem({ id: 0, item: input, quantity: 1 }));
-    setInput("")
-  }
+  const itemDispatch = (input) => {
+    dispatch(
+      addItem({ id: itemList[itemList.length - 1].id + 1, item: input, quantity: 1 })
+    );
+    console.log({ id: itemList[itemList.length - 1].id + 1, item: input, quantity: 1 })
+    setInput("");
+  };
   return (
     <div className="top">
       <div className="input">
@@ -40,16 +43,21 @@ const items = () => {
           <GrAdd
             className="add"
             onClick={() => {
-              itemDispatch(input)
+              itemDispatch(input);
             }}
           />
         </div>
       </div>
       <div className="item_container">
         {itemList.map((item) => (
-          <div className="item">
-            <div className="item_name" key={item.id}>
-              <RiDeleteBin5Line className="delete_icon" />
+          <div className="item"  key={item.id}>
+            <div className="item_name">
+              <RiDeleteBin5Line
+                className="delete_icon"
+                onClick={() => {
+                  dispatch(deleteItem({ id: item.id }));
+                }}
+              />
               <span>{item.item}</span>
             </div>
             <div className="item_quantity">
